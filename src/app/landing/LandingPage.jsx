@@ -304,7 +304,7 @@ export default function LandingPage() {
         <div className="footer-container">
           <div className="footer-brand">
             <div className="logo">
-              <span className="logo-icon">❄️</span>
+              {/* <span className="logo-icon">❄️</span> */}
               <span className="logo-text">Sub-Zero</span>
             </div>
             <p className="footer-tagline">The command center for your cash.</p>
