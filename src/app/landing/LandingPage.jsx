@@ -108,37 +108,16 @@ export default function LandingPage() {
             <div className="visual-container glass-effect">
               {/* Image version - use this now */}
 
-              <Image
-                src="/images/dashboard-preview.png"
-                alt="Sub-Zero Dashboard Preview"
-                className="dashboard-preview"
-                fill
-              />
+              <div style={{ position: 'relative', width: '100%', height: '400px' }}>
+                <Image
+                  src="/dashboard-screenshot.png"
+                  alt="Sub-Zero Dashboard Preview"
+                  fill
+                  style={{ objectFit: 'cover' }} // This makes the image cover the area nicely
+                  priority // Good for LCP
+                />
+              </div>
 
-              {/* Video version - uncomment when ready
-    <video 
-      autoPlay 
-      loop 
-      muted 
-      playsInline
-      className="dashboard-preview"
-      poster="/images/dashboard-preview.png"
-    >
-      <source src="/videos/dashboard-demo.mp4" type="video/mp4" />
-    </video>
-    */}
-
-              {/* Optional overlay with stats */}
-              {/* <div className="preview-overlay">
-      <div className="preview-stat">
-        <span className="preview-label">Monthly Burn</span>
-        <span className="preview-value">$247.50</span>
-      </div>
-      <div className="preview-stat">
-        <span className="preview-label">Active Subs</span>
-        <span className="preview-value">12</span>
-      </div>
-    </div> */}
             </div>
           </div>
         </div>
