@@ -95,7 +95,7 @@ const Navbar = () => {
       {/* Navbar */}
       <nav className={`navbar ${isOpen ? 'open' : ''}`}>
         <div className="nav-brand">
-          <Link href="/dashboard" className="brand-link">
+          <Link href="/" className="brand-link">
             {/* <span className="brand-icon">❄️</span> */}
             <span className="brand-text">Sub-Zero</span>
           </Link>

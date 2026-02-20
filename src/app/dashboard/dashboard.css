@@ -238,6 +238,7 @@ body {
   transform: translateY(-4px);
   border-color: #00ff88;
   box-shadow: 0 10px 30px rgba(0, 255, 136, 0.1);
+  cursor: pointer;
 }
 
 .card-header {

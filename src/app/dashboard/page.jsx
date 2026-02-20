@@ -75,7 +75,7 @@ export default function DashboardPage() {
   }
 
   const handleDelete = async (id) => {
-    const confirmed = window.confirm('Are you sure you want to reove this subscription?');
+    const confirmed = window.confirm('Are you sure you want to remove this subscription?');
 
     if (!confirmed) return;
 
