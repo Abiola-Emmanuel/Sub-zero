@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import {
@@ -17,7 +17,7 @@ import {
 import './landing.css';
 
 export default function LandingPage() {
-  const observerRef = useRef(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     // Simple intersection observer for fade-in animations
@@ -39,6 +39,7 @@ export default function LandingPage() {
 
   return (
     <div className="landing-wrapper">
+
       {/* Animated Background */}
       <div className="landing-background">
         <div className="gradient-sphere"></div>
@@ -50,14 +51,15 @@ export default function LandingPage() {
       <header className="landing-header">
         <div className="header-container">
           <Link href="/" className="logo">
-            {/* <span className="logo-icon">❄️</span> */}
-            <span className="logo-text ">Sub-Zero</span>
+            <span className="logo-text">Sub-Zero</span>
           </Link>
 
-          <nav className="header-nav">
+          {/* Desktop Navigation */}
+          <nav className="header-nav desktop-nav">
             <Link href="#features" className="nav-link">Features</Link>
             <Link href="#how-it-works" className="nav-link">How it Works</Link>
             <Link href="#pricing" className="nav-link">Pricing</Link>
+            <Link href="/about" className="nav-link">About</Link>
           </nav>
 
           <div className="header-actions">
@@ -66,8 +68,27 @@ export default function LandingPage() {
               Initialize Vault
               <FiArrowRight className="btn-icon" />
             </Link>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="mobile-menu-btn"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              <span className="hamburger-line"></span>
+              <span className="hamburger-line"></span>
+              <span className="hamburger-line"></span>
+            </button>
           </div>
         </div>
+
+        {/* Mobile Navigation Menu */}
+        {mobileMenuOpen && (
+          <div className="mobile-nav">
+            <Link href="#features" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>Features</Link>
+            <Link href="#pricing" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>Pricing</Link>
+            <Link href="/about" className="mobile-nav-link" onClick={() => setMobileMenuOpen(false)}>About</Link>
+          </div>
+        )}
       </header>
 
       {/* Hero Section */}
