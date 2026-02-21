@@ -57,7 +57,6 @@ export default function LandingPage() {
           {/* Desktop Navigation */}
           <nav className="header-nav desktop-nav">
             <Link href="#features" className="nav-link">Features</Link>
-            <Link href="#how-it-works" className="nav-link">How it Works</Link>
             <Link href="#pricing" className="nav-link">Pricing</Link>
             <Link href="/about" className="nav-link">About</Link>
           </nav>
